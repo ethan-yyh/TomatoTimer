@@ -14,6 +14,9 @@
 		D3B8D87025FD5B3500B1B3CE /* TomatoTimer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D3B8D86E25FD5B3500B1B3CE /* TomatoTimer.xcdatamodeld */; };
 		D3B8D87225FD5B3700B1B3CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3B8D87125FD5B3700B1B3CE /* Assets.xcassets */; };
 		D3B8D87525FD5B3700B1B3CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3B8D87325FD5B3700B1B3CE /* LaunchScreen.storyboard */; };
+		D3B8D9BA2614F57800B1B3CE /* session.m4r in Resources */ = {isa = PBXBuildFile; fileRef = D3B8D9B72614F57800B1B3CE /* session.m4r */; };
+		D3B8D9BB2614F57800B1B3CE /* longbreak.m4r in Resources */ = {isa = PBXBuildFile; fileRef = D3B8D9B82614F57800B1B3CE /* longbreak.m4r */; };
+		D3B8D9BC2614F57800B1B3CE /* shortbreak.m4r in Resources */ = {isa = PBXBuildFile; fileRef = D3B8D9B92614F57800B1B3CE /* shortbreak.m4r */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		D3B8D87125FD5B3700B1B3CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3B8D87425FD5B3700B1B3CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3B8D87625FD5B3700B1B3CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3B8D9B72614F57800B1B3CE /* session.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = session.m4r; sourceTree = "<group>"; };
+		D3B8D9B82614F57800B1B3CE /* longbreak.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = longbreak.m4r; sourceTree = "<group>"; };
+		D3B8D9B92614F57800B1B3CE /* shortbreak.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = shortbreak.m4r; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 		D3B8D86425FD5B3500B1B3CE /* TomatoTimer */ = {
 			isa = PBXGroup;
 			children = (
+				D3B8D9B62614F55B00B1B3CE /* Sounds */,
 				D3B8D86525FD5B3500B1B3CE /* AppDelegate.swift */,
 				D3B8D86725FD5B3500B1B3CE /* SceneDelegate.swift */,
 				D3B8D86925FD5B3500B1B3CE /* ClockViewController.swift */,
@@ -68,6 +75,16 @@
 				D3B8D86E25FD5B3500B1B3CE /* TomatoTimer.xcdatamodeld */,
 			);
 			path = TomatoTimer;
+			sourceTree = "<group>";
+		};
+		D3B8D9B62614F55B00B1B3CE /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				D3B8D9B92614F57800B1B3CE /* shortbreak.m4r */,
+				D3B8D9B82614F57800B1B3CE /* longbreak.m4r */,
+				D3B8D9B72614F57800B1B3CE /* session.m4r */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,9 +144,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3B8D9BA2614F57800B1B3CE /* session.m4r in Resources */,
+				D3B8D9BC2614F57800B1B3CE /* shortbreak.m4r in Resources */,
 				D3B8D87525FD5B3700B1B3CE /* LaunchScreen.storyboard in Resources */,
 				D3B8D87225FD5B3700B1B3CE /* Assets.xcassets in Resources */,
 				D3B8D86D25FD5B3500B1B3CE /* Main.storyboard in Resources */,
+				D3B8D9BB2614F57800B1B3CE /* longbreak.m4r in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

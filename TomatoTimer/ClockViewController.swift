@@ -1,4 +1,5 @@
 import UIKit
+import AVFoundation
 
 class ClockViewController: UIViewController {
     // draw a circle
@@ -11,26 +12,49 @@ class ClockViewController: UIViewController {
     private let statusLayer6 = CAShapeLayer()
     private let statusLayer7 = CAShapeLayer()
     
-    
+    // other vars
     private var timerHasStarted = false
     private var secondsRemain = TimeInterval(1) // keep track of remaining time in seconds
     private var timer = DispatchSource.makeTimerSource() // initialize the timer
     private var clockType = 1
     
-    private let sessionLength = "120" // seconds
-    private let shortBreakLength = "120" // seconds
-    private let longBreakLength = "120" // seconds
+    private let sessionLength = "2" // seconds
+    private let shortBreakLength = "2" // seconds
+    private let longBreakLength = "2" // seconds
     
+    private let sessionNotification = "Stay Focused."
+    private let shortBreakNotification = "Great Job!"
+    private let longBreakNotification = "Cycle Completed."
+    
+    private let sessionSound = "session.m4r"
+    private let shortBreakSound = "shortbreak.m4r"
+    private let longBreakSound = "longbreak.m4r"
+    
+    // create text lables
     let timeLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 1000, height: 1000))
+    let notificationLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 1000, height: 1000))
+    
+    // AV player
+    var notification: AVAudioPlayer?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // initiate text labels
         timeLabel.center = CGPoint(x:view.center.x, y: view.center.y-50)
         timeLabel.font = UIFont(name: "Helvetica Neue Thin", size: self.view.frame.width * 0.25)
         timeLabel.textColor = .white
         timeLabel.textAlignment = .center
+        
+        notificationLabel.center = CGPoint(x:view.center.x, y: view.center.y + view.frame.height * 0.25)
+        notificationLabel.font = UIFont(name: "Helvetica Neue Thin", size: self.view.frame.width * 0.10)
+        notificationLabel.textAlignment = .center
+        notificationLabel.textColor = .white
+        notificationLabel.text = sessionNotification
+        
+        view.addSubview(timeLabel)
+        view.addSubview(notificationLabel)
         
         // starting now, repeat every second
         // timer.activate()
@@ -64,11 +88,20 @@ class ClockViewController: UIViewController {
                         self?.clockType -= 8
                     }
                     
+                    if self?.clockType == 1{
+                        self?.clearStatusBar()
+                    }
+                    
                     if self?.clockType == 2 || self?.clockType == 4 || self?.clockType == 6 {
+                        self?.notificationLabel.text = self!.shortBreakNotification
+                        self?.alert(file: self!.sessionSound)
                         self?.drawNewSession(color: UIColor.systemGreen.cgColor, period: self!.shortBreakLength)
                     } else if self?.clockType == 1 || self?.clockType == 3 || self?.clockType == 5 || self?.clockType == 7{
+                        self?.notificationLabel.text = self!.sessionNotification
+                        self?.alert(file: self!.shortBreakSound)
                         self?.drawNewSession(color: UIColor.systemOrange.cgColor, period: self!.sessionLength)
-                    } else if self?.clockType == 8 {
+                    } else if self?.clockType == 8 {                        self?.notificationLabel.text = self!.longBreakNotification
+                        self?.alert(file: self!.longBreakSound)
                         self?.drawNewSession(color: UIColor.systemBlue.cgColor, period: self!.longBreakLength)
                     }
                     
@@ -88,6 +121,31 @@ class ClockViewController: UIViewController {
             }
         }
     }
+    
+    func clearStatusBar(){
+        statusLayer1.removeFromSuperlayer()
+        statusLayer2.removeFromSuperlayer()
+        statusLayer3.removeFromSuperlayer()
+        statusLayer4.removeFromSuperlayer()
+        statusLayer5.removeFromSuperlayer()
+        statusLayer6.removeFromSuperlayer()
+        statusLayer7.removeFromSuperlayer()
+        
+    }
+    
+    func alert(file: String){
+        
+        let path = Bundle.main.path(forResource: file, ofType:nil)!
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            notification = try AVAudioPlayer(contentsOf: url)
+            notification?.play()
+        } catch {
+            print("Couldn't load sound file.")
+        }
+        
+    }
 
     func secondsToString(secondsRemain: TimeInterval) -> String {
         if secondsRemain == 0.0{
@@ -104,7 +162,7 @@ class ClockViewController: UIViewController {
     
     func updateStatusBar(currentClockType: Int){
         
-        let centerYAxis = view.center.y + view.frame.height * 0.3
+        let centerYAxis = view.center.y + view.frame.height * 0.35
         let offset = CGFloat(0.09) // defines how spread the circles are
         
         // define center index
@@ -115,7 +173,6 @@ class ClockViewController: UIViewController {
         let center5 = CGPoint(x: (view.center.x + view.frame.width * offset), y: centerYAxis)
         let center6 = CGPoint(x: (view.center.x + view.frame.width * offset * 2), y: centerYAxis)
         let center7 = CGPoint(x: (view.center.x + view.frame.width * offset * 3), y: centerYAxis)
-
 
         
         // define radius
@@ -230,7 +287,7 @@ class ClockViewController: UIViewController {
         timeLabel.text = secondsToString(secondsRemain: TimeInterval(period)!)
         
         view.layer.addSublayer(clock)
-        view.addSubview(timeLabel)
+        
         
     }
     
