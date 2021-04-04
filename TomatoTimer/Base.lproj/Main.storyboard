@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,16 +12,16 @@
         <!--Start View Controller-->
         <scene sceneID="bKD-ik-m1i">
             <objects>
-                <viewController id="9gp-pY-B97" customClass="StartViewController" customModule="TomatoTimer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StartView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9gp-pY-B97" customClass="StartViewController" customModule="TomatoTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XeN-f5-y02">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dSp-9T-uQ5">
-                                <rect key="frame" x="155" y="687" width="121" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dSp-9T-uQ5">
+                                <rect key="frame" x="155" y="717" width="121" height="13"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="kw4-JK-swi"/>
+                                    <action selector="startButton:" destination="9gp-pY-B97" eventType="touchUpInside" id="jhK-us-1Rs"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gXo-Uf-5Wr">
@@ -53,25 +54,42 @@
         <!--Clock View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ClockViewController" customModule="TomatoTimer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ClockView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ClockViewController" customModule="TomatoTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6H-fw-bCV">
-                                <rect key="frame" x="20" y="44" width="74" height="22"/>
+                                <rect key="frame" x="54" y="43" width="43" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="info.circle" catalog="system"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <imageReference key="image" image="info.circle" catalog="system" symbolScale="large"/>
+                                </state>
                                 <connections>
                                     <segue destination="iI7-ua-8ds" kind="presentation" id="Gek-hQ-sUo"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fg5-GT-IiN">
-                                <rect key="frame" x="147" y="27" width="165" height="56"/>
+                                <rect key="frame" x="307" y="39" width="62" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="gearshape" catalog="system"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="gearshape" catalog="system" symbolScale="large"/>
+                                </state>
                                 <connections>
                                     <segue destination="T9L-kM-RBy" kind="show" id="vMa-h5-jLG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CfL-jT-roj">
+                                <rect key="frame" x="110" y="767" width="176" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancel this session">
+                                    <imageReference key="image" image="xmark" catalog="system" symbolScale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="BacktoStart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yGn-Fh-K0x"/>
+                                    <segue destination="NZG-eJ-KB7" kind="unwind" unwindAction="unwindToStartViewController:" id="nTp-Gc-hm0"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -85,6 +103,7 @@
                     <navigationItem key="navigationItem" id="Eru-sE-TYE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="NZG-eJ-KB7" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="UVC-eM-a1c">
                     <connections>
                         <action selector="screenTapped:" destination="BYZ-38-t0r" id="MQs-Wi-v33"/>
@@ -164,6 +183,7 @@
         <image name="arrow.backward.square" catalog="system" width="128" height="114"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

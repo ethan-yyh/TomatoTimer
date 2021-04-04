@@ -20,7 +20,11 @@ class SettingsCell: UITableViewCell {
     }
     lazy var switchControl_reset: UISwitch = {
         let switchControl_reset = UISwitch()
-        switchControl_reset.setOn(false, animated: true)
+        let sound_switch = UserDefaults.standard.integer(forKey: "Reset_isOn")
+        if (sound_switch == 1){
+            switchControl_reset.setOn(true, animated: true)}else{
+                switchControl_reset.setOn(false, animated: true)
+            }
         switchControl_reset.onTintColor = .blue
         switchControl_reset.translatesAutoresizingMaskIntoConstraints = false
         switchControl_reset.addTarget(self, action: #selector(handleResetSwitchAction), for: .valueChanged)
@@ -28,7 +32,10 @@ class SettingsCell: UITableViewCell {
     }()
     lazy var switchControl_sound: UISwitch = {
         let switchControl_sound = UISwitch()
-        switchControl_sound.setOn(false, animated: true)
+        let sound_switch = UserDefaults.standard.integer(forKey: "Sound_isOn")
+        if (sound_switch == 0){
+            switchControl_sound.setOn(false, animated: true)
+        }else{switchControl_sound.setOn(true, animated: true)}
         switchControl_sound.onTintColor = .red
         switchControl_sound.translatesAutoresizingMaskIntoConstraints = false
         switchControl_sound.addTarget(self, action: #selector(handleSoundSwitchAction), for: .valueChanged)

@@ -21,7 +21,14 @@ class StartViewController: UIViewController {
         timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: "onTransition", userInfo: nil, repeats: true)
         }
         
-    
+    @IBAction func startButton(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewController(identifier: "ClockView")
+                vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+                self.present(vc, animated: true, completion: nil)
+                show(vc, sender: self)
+    }
+    @IBAction func unwindToStartViewController(_ unwindSegue: UIStoryboardSegue) {}
     @objc func onTransition() {
         if (photoCount < images.count - 1){
             photoCount = photoCount  + 1;
@@ -32,6 +39,7 @@ class StartViewController: UIViewController {
         UIView.transition(with: self.imageView, duration: 1.5, options: .transitionCrossDissolve, animations: { [self] in
             self.imageView.image = UIImage(named: self.images[photoCount])
             print(self.images[photoCount])
+            
         }, completion: nil)
     }
 }
