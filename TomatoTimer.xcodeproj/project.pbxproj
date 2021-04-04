@@ -7,7 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B05D1C81261981F600681E45 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05D1C80261981F600681E45 /* StartViewController.swift */; };
+		B05D1C842619825D00681E45 /* image1.png in Resources */ = {isa = PBXBuildFile; fileRef = B05D1C832619825D00681E45 /* image1.png */; };
+		B05D1C872619828900681E45 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = B05D1C862619828900681E45 /* 1.png */; };
+		B05D1C8E2619836600681E45 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = B05D1C8D2619836600681E45 /* 2.png */; };
+		B05D1C91261989BC00681E45 /* launch.JPG in Resources */ = {isa = PBXBuildFile; fileRef = B05D1C90261989BC00681E45 /* launch.JPG */; };
+		B05D1C9626198C6900681E45 /* S2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B05D1C9326198C6800681E45 /* S2.jpeg */; };
+		B05D1C9726198C6900681E45 /* S3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B05D1C9426198C6900681E45 /* S3.jpeg */; };
+		B05D1C9826198C6900681E45 /* S1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B05D1C9526198C6900681E45 /* S1.jpeg */; };
 		B06281832617817B00A4007E /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06281822617817B00A4007E /* InfoViewController.swift */; };
+		B062818726179AD500A4007E /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B062818626179AD500A4007E /* SettingViewController.swift */; };
+		B062819526179D2E00A4007E /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B062819326179D2E00A4007E /* SettingsCell.swift */; };
+		B062819626179D2E00A4007E /* UserInfoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B062819426179D2E00A4007E /* UserInfoHeader.swift */; };
+		B062819926179E7A00A4007E /* icon.JPG in Resources */ = {isa = PBXBuildFile; fileRef = B062819826179E7A00A4007E /* icon.JPG */; };
+		B062819C2617A7DF00A4007E /* SettingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B062819B2617A7DF00A4007E /* SettingSection.swift */; };
+		B062819F2617ADA400A4007E /* PlaceholderHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B062819E2617ADA400A4007E /* PlaceholderHeader.swift */; };
 		D3B8D86625FD5B3500B1B3CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B8D86525FD5B3500B1B3CE /* AppDelegate.swift */; };
 		D3B8D86825FD5B3500B1B3CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B8D86725FD5B3500B1B3CE /* SceneDelegate.swift */; };
 		D3B8D86A25FD5B3500B1B3CE /* ClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B8D86925FD5B3500B1B3CE /* ClockViewController.swift */; };
@@ -21,7 +35,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B05D1C80261981F600681E45 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		B05D1C832619825D00681E45 /* image1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image1.png; sourceTree = "<group>"; };
+		B05D1C862619828900681E45 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		B05D1C8D2619836600681E45 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		B05D1C90261989BC00681E45 /* launch.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = launch.JPG; sourceTree = "<group>"; };
+		B05D1C9326198C6800681E45 /* S2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = S2.jpeg; sourceTree = "<group>"; };
+		B05D1C9426198C6900681E45 /* S3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = S3.jpeg; sourceTree = "<group>"; };
+		B05D1C9526198C6900681E45 /* S1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = S1.jpeg; sourceTree = "<group>"; };
 		B06281822617817B00A4007E /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		B062818626179AD500A4007E /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		B062819326179D2E00A4007E /* SettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		B062819426179D2E00A4007E /* UserInfoHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoHeader.swift; sourceTree = "<group>"; };
+		B062819826179E7A00A4007E /* icon.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon.JPG; sourceTree = "<group>"; };
+		B062819B2617A7DF00A4007E /* SettingSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSection.swift; sourceTree = "<group>"; };
+		B062819E2617ADA400A4007E /* PlaceholderHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderHeader.swift; sourceTree = "<group>"; };
 		D3B8D86225FD5B3500B1B3CE /* TomatoTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TomatoTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3B8D86525FD5B3500B1B3CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3B8D86725FD5B3500B1B3CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +75,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B074F41F261952BC00817898 /* SettingPage */ = {
+			isa = PBXGroup;
+			children = (
+				B074F421261952F200817898 /* Classes&Structures */,
+				B074F420261952D700817898 /* ViewController */,
+			);
+			path = SettingPage;
+			sourceTree = "<group>";
+		};
+		B074F420261952D700817898 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B062818626179AD500A4007E /* SettingViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		B074F421261952F200817898 /* Classes&Structures */ = {
+			isa = PBXGroup;
+			children = (
+				B062819326179D2E00A4007E /* SettingsCell.swift */,
+				B062819426179D2E00A4007E /* UserInfoHeader.swift */,
+				B062819E2617ADA400A4007E /* PlaceholderHeader.swift */,
+				B062819826179E7A00A4007E /* icon.JPG */,
+				B062819B2617A7DF00A4007E /* SettingSection.swift */,
+			);
+			path = "Classes&Structures";
+			sourceTree = "<group>";
+		};
 		D3B8D85925FD5B3500B1B3CE = {
 			isa = PBXGroup;
 			children = (
@@ -66,9 +123,14 @@
 		D3B8D86425FD5B3500B1B3CE /* TomatoTimer */ = {
 			isa = PBXGroup;
 			children = (
+				B074F41F261952BC00817898 /* SettingPage */,
 				D3B8D9B62614F55B00B1B3CE /* Sounds */,
 				D3B8D86525FD5B3500B1B3CE /* AppDelegate.swift */,
+				B05D1C8D2619836600681E45 /* 2.png */,
+				B05D1C862619828900681E45 /* 1.png */,
+				B05D1C90261989BC00681E45 /* launch.JPG */,
 				D3B8D86725FD5B3500B1B3CE /* SceneDelegate.swift */,
+				B05D1C832619825D00681E45 /* image1.png */,
 				D3B8D86925FD5B3500B1B3CE /* ClockViewController.swift */,
 				B06281822617817B00A4007E /* InfoViewController.swift */,
 				D3B8D86B25FD5B3500B1B3CE /* Main.storyboard */,
@@ -76,6 +138,7 @@
 				D3B8D87325FD5B3700B1B3CE /* LaunchScreen.storyboard */,
 				D3B8D87625FD5B3700B1B3CE /* Info.plist */,
 				D3B8D86E25FD5B3500B1B3CE /* TomatoTimer.xcdatamodeld */,
+				B05D1C80261981F600681E45 /* StartViewController.swift */,
 			);
 			path = TomatoTimer;
 			sourceTree = "<group>";
@@ -83,6 +146,9 @@
 		D3B8D9B62614F55B00B1B3CE /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				B05D1C9526198C6900681E45 /* S1.jpeg */,
+				B05D1C9326198C6800681E45 /* S2.jpeg */,
+				B05D1C9426198C6900681E45 /* S3.jpeg */,
 				D3B8D9B92614F57800B1B3CE /* shortbreak.m4r */,
 				D3B8D9B82614F57800B1B3CE /* longbreak.m4r */,
 				D3B8D9B72614F57800B1B3CE /* session.m4r */,
@@ -147,10 +213,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B05D1C9626198C6900681E45 /* S2.jpeg in Resources */,
+				B05D1C9826198C6900681E45 /* S1.jpeg in Resources */,
+				B05D1C9726198C6900681E45 /* S3.jpeg in Resources */,
+				B05D1C872619828900681E45 /* 1.png in Resources */,
 				D3B8D9BA2614F57800B1B3CE /* session.m4r in Resources */,
+				B05D1C8E2619836600681E45 /* 2.png in Resources */,
+				B05D1C842619825D00681E45 /* image1.png in Resources */,
+				B05D1C91261989BC00681E45 /* launch.JPG in Resources */,
 				D3B8D9BC2614F57800B1B3CE /* shortbreak.m4r in Resources */,
 				D3B8D87525FD5B3700B1B3CE /* LaunchScreen.storyboard in Resources */,
 				D3B8D87225FD5B3700B1B3CE /* Assets.xcassets in Resources */,
+				B062819926179E7A00A4007E /* icon.JPG in Resources */,
 				D3B8D86D25FD5B3500B1B3CE /* Main.storyboard in Resources */,
 				D3B8D9BB2614F57800B1B3CE /* longbreak.m4r in Resources */,
 			);
@@ -163,11 +237,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B062819526179D2E00A4007E /* SettingsCell.swift in Sources */,
 				D3B8D86A25FD5B3500B1B3CE /* ClockViewController.swift in Sources */,
 				D3B8D87025FD5B3500B1B3CE /* TomatoTimer.xcdatamodeld in Sources */,
+				B062819626179D2E00A4007E /* UserInfoHeader.swift in Sources */,
 				D3B8D86625FD5B3500B1B3CE /* AppDelegate.swift in Sources */,
+				B05D1C81261981F600681E45 /* StartViewController.swift in Sources */,
+				B062819C2617A7DF00A4007E /* SettingSection.swift in Sources */,
 				D3B8D86825FD5B3500B1B3CE /* SceneDelegate.swift in Sources */,
 				B06281832617817B00A4007E /* InfoViewController.swift in Sources */,
+				B062819F2617ADA400A4007E /* PlaceholderHeader.swift in Sources */,
+				B062818726179AD500A4007E /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9gp-pY-B97">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -8,12 +8,54 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Start View Controller-->
+        <scene sceneID="bKD-ik-m1i">
+            <objects>
+                <viewController id="9gp-pY-B97" customClass="StartViewController" customModule="TomatoTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XeN-f5-y02">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dSp-9T-uQ5">
+                                <rect key="frame" x="155" y="687" width="121" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="kw4-JK-swi"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gXo-Uf-5Wr">
+                                <rect key="frame" x="69" y="230" width="277" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="TIC-X8-X2Z"/>
+                                    <constraint firstAttribute="width" constant="270" id="ebe-Tq-wP9"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dCO-EA-vaj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gXo-Uf-5Wr" firstAttribute="leading" secondItem="dCO-EA-vaj" secondAttribute="leading" constant="69" id="0cL-bZ-aXz"/>
+                            <constraint firstItem="dSp-9T-uQ5" firstAttribute="top" secondItem="gXo-Uf-5Wr" secondAttribute="bottom" constant="257" id="HiF-sz-gbg"/>
+                            <constraint firstItem="dCO-EA-vaj" firstAttribute="trailing" secondItem="dSp-9T-uQ5" secondAttribute="trailing" constant="138" id="btp-od-mci"/>
+                            <constraint firstItem="dSp-9T-uQ5" firstAttribute="leading" secondItem="dCO-EA-vaj" secondAttribute="leading" constant="155" id="qYh-bD-zzd"/>
+                            <constraint firstItem="dCO-EA-vaj" firstAttribute="trailing" secondItem="gXo-Uf-5Wr" secondAttribute="trailing" constant="68" id="rEz-Ve-KnU"/>
+                            <constraint firstItem="gXo-Uf-5Wr" firstAttribute="top" secondItem="dCO-EA-vaj" secondAttribute="top" constant="186" id="xpR-fr-WfU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="gXo-Uf-5Wr" id="U3Z-rg-Hev"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IWh-Sw-iGf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-671.01449275362324" y="105.80357142857143"/>
+        </scene>
         <!--Clock View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ClockViewController" customModule="TomatoTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6H-fw-bCV">
@@ -25,11 +67,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fg5-GT-IiN">
-                                <rect key="frame" x="157" y="27" width="165" height="56"/>
+                                <rect key="frame" x="147" y="27" width="165" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="gearshape" catalog="system"/>
                                 <connections>
-                                    <segue destination="Hy3-f2-jFN" kind="show" id="mBA-PM-UOd"/>
+                                    <segue destination="T9L-kM-RBy" kind="show" id="vMa-h5-jLG"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -40,6 +82,7 @@
                             <outletCollection property="gestureRecognizers" destination="UVC-eM-a1c" appends="YES" id="n3b-FY-aXJ"/>
                         </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="Eru-sE-TYE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="UVC-eM-a1c">
@@ -50,51 +93,21 @@
             </objects>
             <point key="canvasLocation" x="34.782608695652179" y="93.75"/>
         </scene>
-        <!--Root View Controller-->
-        <scene sceneID="XxY-mY-W0E">
+        <!--Setting View Controller-->
+        <scene sceneID="fhI-Ug-LZ5">
             <objects>
-                <tableViewController id="Ygz-wA-ZsJ" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="6LV-yM-ofN">
+                <viewController storyboardIdentifier="SettingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="T9L-kM-RBy" customClass="SettingViewController" customModule="TomatoTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ErG-ge-P9A">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="FKb-VR-Erm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="WZr-ME-sOl">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WZr-ME-sOl" id="S5a-7q-tZv">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Ygz-wA-ZsJ" id="3eJ-AR-LGl"/>
-                            <outlet property="delegate" destination="Ygz-wA-ZsJ" id="TCr-DF-6Fc"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="4GJ-0h-1H3"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NIq-ur-LYh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="5QG-7k-67h"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PS2-Id-DaG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1716" y="84"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="f6Q-95-new">
-            <objects>
-                <navigationController id="Hy3-f2-jFN" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="Ixe-yU-BT4"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VQS-Ta-GaC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="Ygz-wA-ZsJ" kind="relationship" relationship="rootViewController" id="ohQ-lw-tgr"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="riO-t8-F4l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="916" y="-116"/>
+            <point key="canvasLocation" x="1033.3333333333335" y="-74.330357142857139"/>
         </scene>
         <!--Info View Controller-->
         <scene sceneID="Cg1-Z9-lGx">

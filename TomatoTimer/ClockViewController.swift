@@ -18,7 +18,7 @@ class ClockViewController: UIViewController {
     private var timer = DispatchSource.makeTimerSource() // initialize the timer
     private var clockType = 1
     
-    private let sessionLength = "2" // seconds
+    private let sessionLength = "200" // seconds
     private let shortBreakLength = "2" // seconds
     private let longBreakLength = "2" // seconds
     
