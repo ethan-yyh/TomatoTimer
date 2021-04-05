@@ -18,9 +18,9 @@ class ClockViewController: UIViewController {
     private var timer = DispatchSource.makeTimerSource() // initialize the timer
     private var clockType = 1
     
-    private let sessionLength = "2" // seconds
-    private let shortBreakLength = "2" // seconds
-    private let longBreakLength = "2" // seconds
+    private let sessionLength = "5" // seconds
+    private let shortBreakLength = "5" // seconds
+    private let longBreakLength = "5" // seconds
     
     private let sessionNotification = "Stay Focused."
     private let shortBreakNotification = "Great Job!"
@@ -57,7 +57,6 @@ class ClockViewController: UIViewController {
         view.addSubview(notificationLabel)
         
         // starting now, repeat every second
-        // timer.activate()
         timer.schedule(deadline: .now(),repeating: 1)
         
         /*
@@ -73,8 +72,6 @@ class ClockViewController: UIViewController {
         // every second
         timer.setEventHandler { [weak self] in
             if self!.secondsRemain < 0{
-                
-                self?.secondsRemain = Double(self!.sessionLength)!
                 
                 DispatchQueue.main.async {
                     self?.clock.removeAllAnimations()
