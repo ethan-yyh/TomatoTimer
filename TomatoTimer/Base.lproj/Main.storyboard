@@ -16,40 +16,13 @@
                     <view key="view" contentMode="scaleToFill" id="XeN-f5-y02">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dSp-9T-uQ5">
-                                <rect key="frame" x="155" y="717" width="121" height="13"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="startButton:" destination="9gp-pY-B97" eventType="touchUpInside" id="jhK-us-1Rs"/>
-                                </connections>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gXo-Uf-5Wr">
-                                <rect key="frame" x="69" y="230" width="277" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="TIC-X8-X2Z"/>
-                                    <constraint firstAttribute="width" constant="270" id="ebe-Tq-wP9"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="dCO-EA-vaj"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="gXo-Uf-5Wr" firstAttribute="leading" secondItem="dCO-EA-vaj" secondAttribute="leading" constant="69" id="0cL-bZ-aXz"/>
-                            <constraint firstItem="dSp-9T-uQ5" firstAttribute="top" secondItem="gXo-Uf-5Wr" secondAttribute="bottom" constant="257" id="HiF-sz-gbg"/>
-                            <constraint firstItem="dCO-EA-vaj" firstAttribute="trailing" secondItem="dSp-9T-uQ5" secondAttribute="trailing" constant="138" id="btp-od-mci"/>
-                            <constraint firstItem="dSp-9T-uQ5" firstAttribute="leading" secondItem="dCO-EA-vaj" secondAttribute="leading" constant="155" id="qYh-bD-zzd"/>
-                            <constraint firstItem="dCO-EA-vaj" firstAttribute="trailing" secondItem="gXo-Uf-5Wr" secondAttribute="trailing" constant="68" id="rEz-Ve-KnU"/>
-                            <constraint firstItem="gXo-Uf-5Wr" firstAttribute="top" secondItem="dCO-EA-vaj" secondAttribute="top" constant="186" id="xpR-fr-WfU"/>
-                        </constraints>
+                        <color key="backgroundColor" systemColor="labelColor"/>
                     </view>
-                    <connections>
-                        <outlet property="imageView" destination="gXo-Uf-5Wr" id="U3Z-rg-Hev"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IWh-Sw-iGf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-671.01449275362324" y="105.80357142857143"/>
+            <point key="canvasLocation" x="-749" y="94"/>
         </scene>
         <!--Clock View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -59,12 +32,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6H-fw-bCV">
-                                <rect key="frame" x="54" y="43" width="43" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6H-fw-bCV">
+                                <rect key="frame" x="47" y="46" width="25" height="24"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <imageReference key="image" image="info.circle" catalog="system" symbolScale="large"/>
                                 </state>
                                 <connections>
@@ -72,8 +45,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fg5-GT-IiN">
-                                <rect key="frame" x="307" y="39" width="62" height="56"/>
+                                <rect key="frame" x="325" y="30" width="62" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal">
                                     <imageReference key="image" image="gearshape" catalog="system" symbolScale="large"/>
                                 </state>
@@ -81,21 +55,14 @@
                                     <segue destination="T9L-kM-RBy" kind="show" id="vMa-h5-jLG"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CfL-jT-roj">
-                                <rect key="frame" x="110" y="767" width="176" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Cancel this session">
-                                    <imageReference key="image" image="xmark" catalog="system" symbolScale="large"/>
-                                </state>
-                                <connections>
-                                    <action selector="BacktoStart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yGn-Fh-K0x"/>
-                                    <segue destination="NZG-eJ-KB7" kind="unwind" unwindAction="unwindToStartViewController:" id="nTp-Gc-hm0"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="D6H-fw-bCV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="47" id="KRG-EQ-vkr"/>
+                            <constraint firstItem="D6H-fw-bCV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="2" id="stn-79-qrQ"/>
+                        </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="UVC-eM-a1c" appends="YES" id="n3b-FY-aXJ"/>
                         </connections>
@@ -103,7 +70,6 @@
                     <navigationItem key="navigationItem" id="Eru-sE-TYE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <exit id="NZG-eJ-KB7" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="UVC-eM-a1c">
                     <connections>
                         <action selector="screenTapped:" destination="BYZ-38-t0r" id="MQs-Wi-v33"/>
@@ -183,7 +149,9 @@
         <image name="arrow.backward.square" catalog="system" width="128" height="114"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
-        <image name="xmark" catalog="system" width="128" height="113"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

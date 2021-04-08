@@ -38,18 +38,19 @@ class ClockViewController: UIViewController {
     // AV player
     var notification: AVAudioPlayer?
     
-    @IBAction func BacktoStart(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyboard.instantiateViewController(identifier: "StartView")
-                vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
-                self.present(vc, animated: true, completion: nil)
-                show(vc, sender: self)
-    }
+//    @IBAction func BacktoStart(_ sender: Any) {
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//                let vc = storyboard.instantiateViewController(identifier: "StartView")
+//                vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+//                self.present(vc, animated: true, completion: nil)
+//                show(vc, sender: self)
+//    }
     
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         var TSlen = UserDefaults.standard.integer(forKey: "TS_Time")
         TSlen = Int(TSlen)*60
         var SBlen = UserDefaults.standard.integer(forKey: "SB_Time")
@@ -59,6 +60,12 @@ class ClockViewController: UIViewController {
         self.sessionLength=String(TSlen)
         self.shortBreakLength = String(SBlen) // seconds
         self.longBreakLength = String(LBlen) // seconds
+        
+//        // uncomment for testing
+//        self.sessionLength = "5"
+//        self.shortBreakLength = "5" // seconds
+//        self.longBreakLength = "5" // seconds
+        
         // initiate text labels
         timeLabel.center = CGPoint(x:view.center.x, y: view.center.y-50)
         timeLabel.font = UIFont(name: "Helvetica Neue Thin", size: self.view.frame.width * 0.25)
@@ -113,21 +120,42 @@ class ClockViewController: UIViewController {
                     
                     if self?.clockType == 2 || self?.clockType == 4 || self?.clockType == 6 {
                         self?.notificationLabel.text = self!.shortBreakNotification
+                        
                         let sound_switch = UserDefaults.standard.integer(forKey: "Sound_isOn")
                         if (sound_switch == 1){
-                            self?.alert(file: self!.sessionSound)}
+                            self?.alert(file: self!.sessionSound)
+
+                        }
+                        
+//                        // uncomment for sound testing
+//                        self?.alert(file: self!.sessionSound)
+                        
                         self?.drawNewSession(color: UIColor.systemGreen.cgColor, period: self!.shortBreakLength)
                     } else if self?.clockType == 1 || self?.clockType == 3 || self?.clockType == 5 || self?.clockType == 7{
                         self?.notificationLabel.text = self!.sessionNotification
+                        
                         let sound_switch = UserDefaults.standard.integer(forKey: "Sound_isOn")
                         if (sound_switch == 1){
-                            self?.alert(file: self!.shortBreakSound)}
+                            self?.alert(file: self!.shortBreakSound)
+
+                        }
+                        
+//                        // uncomment for sound testing
+//                        self?.alert(file: self!.shortBreakSound)
+                        
                         self?.drawNewSession(color: UIColor.systemOrange.cgColor, period: self!.sessionLength)
                     } else if self?.clockType == 8 {
                         self?.notificationLabel.text = self!.longBreakNotification
+                        
                         let sound_switch = UserDefaults.standard.integer(forKey: "Sound_isOn")
                         if (sound_switch == 1){
-                            self?.alert(file: self!.longBreakSound)}
+                            self?.alert(file: self!.longBreakSound)
+
+                        }
+                        
+//                        // uncomment for sound testing
+//                        self?.alert(file: self!.longBreakSound)
+                        
                         self?.drawNewSession(color: UIColor.systemBlue.cgColor, period: self!.longBreakLength)
                     }
                     self?.updateStatusBar(currentClockType: self!.clockType)

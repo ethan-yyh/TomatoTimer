@@ -9,37 +9,60 @@ import UIKit
 
 class StartViewController: UIViewController {
 
-    var images:[String] = ["S1.jpeg","S2.jpeg","S3.jpeg"]
+    // welcome texts
+    let welcomeTexts: [String] = ["Live", "Learn", "Play"]
+    var currentTextIndex: Int = 0
+    
     var timer = Timer()
-    var photoCount:Int = 0
-    @IBOutlet weak var imageView: UIImageView!
+    let welcomeTextLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 1000, height: 1000))
+    
+    
     override func viewDidLoad() {
-            super.viewDidLoad()
-            
+        super.viewDidLoad()
         
-        imageView.image = UIImage.init(named: "S3.jpeg")
-        timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: "onTransition", userInfo: nil, repeats: true)
-        }
+        // creating welcome text label
         
-    @IBAction func startButton(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyboard.instantiateViewController(identifier: "ClockView")
-                vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
-                self.present(vc, animated: true, completion: nil)
-                show(vc, sender: self)
+        welcomeTextLabel.center = CGPoint(x:view.center.x, y: view.center.y-50)
+        welcomeTextLabel.font = UIFont(name: "Helvetica Neue Thin", size: self.view.frame.width * 0.20)
+        welcomeTextLabel.textColor = .white
+        welcomeTextLabel.textAlignment = .center
+        view.addSubview(welcomeTextLabel)
+        
+        // initialize the text to the first welcome text
+        welcomeTextLabel.text = welcomeTexts[currentTextIndex]
+        currentTextIndex += 1
+        
+        // a timer that files an action every two seconds
+        timer = Timer.scheduledTimer(timeInterval: 2.5, target: self, selector: #selector(self.nextWelcomeText), userInfo: nil, repeats: true)
+        
     }
-    @IBAction func unwindToStartViewController(_ unwindSegue: UIStoryboardSegue) {}
-    @objc func onTransition() {
-        if (photoCount < images.count - 1){
-            photoCount = photoCount  + 1;
-        }else{
-            photoCount = 0;
-        }
-       // print(photoCount)
-        UIView.transition(with: self.imageView, duration: 1.5, options: .transitionCrossDissolve, animations: { [self] in
-            self.imageView.image = UIImage(named: self.images[photoCount])
-            print(self.images[photoCount])
+        
+
+    @objc func nextWelcomeText() {
+        if currentTextIndex <= 2 {
             
-        }, completion: nil)
+            // change word for welcome text label
+            UIView.transition(with: self.welcomeTextLabel, duration: 1, options: .transitionCrossDissolve, animations: { [weak self] in
+                self?.welcomeTextLabel.text = self?.welcomeTexts[self!.currentTextIndex]
+            }, completion: nil)
+            
+            // increment current text index
+            currentTextIndex += 1
+            
+            
+            
+        } else if currentTextIndex > 2 {
+            
+            // stop the timer
+            self.timer.invalidate()
+            
+            // go to clock view
+            print("transferring to clock view")
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let clockViewController = storyboard.instantiateViewController(identifier: "ClockView")
+            clockViewController.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+            self.present(clockViewController, animated: true, completion: nil)
+            show(clockViewController, sender: self)
+        }
     }
 }
