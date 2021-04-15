@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9gp-pY-B97">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Start View Controller-->
+        <scene sceneID="bKD-ik-m1i">
+            <objects>
+                <viewController storyboardIdentifier="StartView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9gp-pY-B97" customClass="StartViewController" customModule="TomatoTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XeN-f5-y02">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="dCO-EA-vaj"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IWh-Sw-iGf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-749" y="94"/>
+        </scene>
+        <!--Clock View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ClockView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ClockViewController" customModule="TomatoTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fg5-GT-IiN">
+                                <rect key="frame" x="364" y="66" width="26" height="25"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="gearshape" catalog="system" symbolScale="large"/>
+                                </state>
+                                <connections>
+                                    <segue destination="T9L-kM-RBy" kind="show" id="vMa-h5-jLG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6H-fw-bCV">
+                                <rect key="frame" x="35" y="64" width="25" height="29"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="24"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <imageReference key="image" image="info.circle" catalog="system" symbolScale="large"/>
+                                </state>
+                                <connections>
+                                    <segue destination="iI7-ua-8ds" kind="presentation" id="Gek-hQ-sUo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Fg5-GT-IiN" secondAttribute="trailing" constant="24" id="8Sk-Jz-eDC"/>
+                            <constraint firstItem="D6H-fw-bCV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="KAp-cX-Fdg"/>
+                            <constraint firstItem="D6H-fw-bCV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="ST9-gD-2sJ"/>
+                            <constraint firstItem="Fg5-GT-IiN" firstAttribute="centerY" secondItem="D6H-fw-bCV" secondAttribute="centerY" id="qgP-7v-Atp"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="UVC-eM-a1c" appends="YES" id="n3b-FY-aXJ"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="Eru-sE-TYE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="UVC-eM-a1c">
+                    <connections>
+                        <action selector="screenTapped:" destination="BYZ-38-t0r" id="MQs-Wi-v33"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="33.75" y="93.75"/>
+        </scene>
+        <!--Setting View Controller-->
+        <scene sceneID="fhI-Ug-LZ5">
+            <objects>
+                <viewController storyboardIdentifier="SettingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="T9L-kM-RBy" customClass="SettingViewController" customModule="TomatoTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ErG-ge-P9A">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VrM-nq-HTA">
+                                <rect key="frame" x="0.0" y="0.0" width="508" height="44"/>
+                            </navigationBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FKb-VR-Erm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VrM-nq-HTA" firstAttribute="top" secondItem="FKb-VR-Erm" secondAttribute="top" id="PPP-9U-sjr"/>
+                            <constraint firstItem="VrM-nq-HTA" firstAttribute="trailing" secondItem="FKb-VR-Erm" secondAttribute="trailing" id="gsW-mq-521"/>
+                            <constraint firstItem="VrM-nq-HTA" firstAttribute="leading" secondItem="FKb-VR-Erm" secondAttribute="leading" id="r1J-Fq-dll"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="5QG-7k-67h"/>
+                    <connections>
+                        <segue destination="2c2-AJ-Trd" kind="unwind" identifier="unwindToClockView" unwindAction="unwindToClockViewController:" id="EJY-S5-q6B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PS2-Id-DaG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="2c2-AJ-Trd" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1033.3333333333335" y="-74.330357142857139"/>
+        </scene>
+        <!--Info View Controller-->
+        <scene sceneID="Cg1-Z9-lGx">
+            <objects>
+                <viewController id="iI7-ua-8ds" customClass="InfoViewController" customModule="TomatoTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BKW-5B-tFX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" backIndicatorImage="arrow.backward.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="DM2-Vs-K8J">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                <items>
+                                    <navigationItem title="About Pomodoro" id="ObK-vY-37w" userLabel="Method Info.">
+                                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" image="arrowshape.turn.up.backward" catalog="system" id="3pV-kE-W4O">
+                                            <connections>
+                                                <segue destination="rMb-AN-OFI" kind="unwind" unwindAction="unwindToClockViewController:" id="uLm-Zn-kG9"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V5O-6y-CZn">
+                                <rect key="frame" x="0.0" y="56" width="414" height="786"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="d6h-Dl-AHb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DM2-Vs-K8J" firstAttribute="top" secondItem="d6h-Dl-AHb" secondAttribute="top" id="1eO-3H-7lT"/>
+                            <constraint firstAttribute="bottom" secondItem="V5O-6y-CZn" secondAttribute="bottom" id="6dP-Er-O3D"/>
+                            <constraint firstItem="DM2-Vs-K8J" firstAttribute="leading" secondItem="d6h-Dl-AHb" secondAttribute="leading" id="LFH-JD-Waj"/>
+                            <constraint firstItem="V5O-6y-CZn" firstAttribute="trailing" secondItem="d6h-Dl-AHb" secondAttribute="trailing" id="Ub7-3N-pst"/>
+                            <constraint firstItem="V5O-6y-CZn" firstAttribute="top" secondItem="DM2-Vs-K8J" secondAttribute="bottom" id="f7I-JK-XuP"/>
+                            <constraint firstItem="DM2-Vs-K8J" firstAttribute="trailing" secondItem="d6h-Dl-AHb" secondAttribute="trailing" id="o3j-PQ-mXP"/>
+                            <constraint firstItem="V5O-6y-CZn" firstAttribute="leading" secondItem="d6h-Dl-AHb" secondAttribute="leading" id="x8K-B5-e7Z"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="V5O-6y-CZn" id="UPi-9r-ClL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="shO-OE-IQG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="rMb-AN-OFI" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="933" y="606"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow.backward.square" catalog="system" width="128" height="114"/>
+        <image name="arrowshape.turn.up.backward" catalog="system" width="128" height="106"/>
+        <image name="gearshape" catalog="system" width="128" height="121"/>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

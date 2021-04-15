@@ -7,25 +7,53 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B05D1C81261981F600681E45 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05D1C80261981F600681E45 /* StartViewController.swift */; };
+		B05D1C9626198C6900681E45 /* S2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B05D1C9326198C6800681E45 /* S2.jpeg */; };
+		B05D1C9726198C6900681E45 /* S3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B05D1C9426198C6900681E45 /* S3.jpeg */; };
+		B05D1C9826198C6900681E45 /* S1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B05D1C9526198C6900681E45 /* S1.jpeg */; };
+		B06281832617817B00A4007E /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06281822617817B00A4007E /* InfoViewController.swift */; };
+		B062818726179AD500A4007E /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B062818626179AD500A4007E /* SettingViewController.swift */; };
+		B062819526179D2E00A4007E /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B062819326179D2E00A4007E /* SettingsCell.swift */; };
+		B062819626179D2E00A4007E /* UserInfoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B062819426179D2E00A4007E /* UserInfoHeader.swift */; };
+		B062819926179E7A00A4007E /* icon.JPG in Resources */ = {isa = PBXBuildFile; fileRef = B062819826179E7A00A4007E /* icon.JPG */; };
+		B062819C2617A7DF00A4007E /* SettingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B062819B2617A7DF00A4007E /* SettingSection.swift */; };
+		B062819F2617ADA400A4007E /* PlaceholderHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B062819E2617ADA400A4007E /* PlaceholderHeader.swift */; };
 		D3B8D86625FD5B3500B1B3CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B8D86525FD5B3500B1B3CE /* AppDelegate.swift */; };
 		D3B8D86825FD5B3500B1B3CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B8D86725FD5B3500B1B3CE /* SceneDelegate.swift */; };
-		D3B8D86A25FD5B3500B1B3CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B8D86925FD5B3500B1B3CE /* ViewController.swift */; };
+		D3B8D86A25FD5B3500B1B3CE /* ClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B8D86925FD5B3500B1B3CE /* ClockViewController.swift */; };
 		D3B8D86D25FD5B3500B1B3CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3B8D86B25FD5B3500B1B3CE /* Main.storyboard */; };
 		D3B8D87025FD5B3500B1B3CE /* TomatoTimer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D3B8D86E25FD5B3500B1B3CE /* TomatoTimer.xcdatamodeld */; };
 		D3B8D87225FD5B3700B1B3CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3B8D87125FD5B3700B1B3CE /* Assets.xcassets */; };
 		D3B8D87525FD5B3700B1B3CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3B8D87325FD5B3700B1B3CE /* LaunchScreen.storyboard */; };
+		D3B8D9BA2614F57800B1B3CE /* session.m4r in Resources */ = {isa = PBXBuildFile; fileRef = D3B8D9B72614F57800B1B3CE /* session.m4r */; };
+		D3B8D9BB2614F57800B1B3CE /* longbreak.m4r in Resources */ = {isa = PBXBuildFile; fileRef = D3B8D9B82614F57800B1B3CE /* longbreak.m4r */; };
+		D3B8D9BC2614F57800B1B3CE /* shortbreak.m4r in Resources */ = {isa = PBXBuildFile; fileRef = D3B8D9B92614F57800B1B3CE /* shortbreak.m4r */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B05D1C80261981F600681E45 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		B05D1C9326198C6800681E45 /* S2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = S2.jpeg; sourceTree = "<group>"; };
+		B05D1C9426198C6900681E45 /* S3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = S3.jpeg; sourceTree = "<group>"; };
+		B05D1C9526198C6900681E45 /* S1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = S1.jpeg; sourceTree = "<group>"; };
+		B06281822617817B00A4007E /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		B062818626179AD500A4007E /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		B062819326179D2E00A4007E /* SettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		B062819426179D2E00A4007E /* UserInfoHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoHeader.swift; sourceTree = "<group>"; };
+		B062819826179E7A00A4007E /* icon.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon.JPG; sourceTree = "<group>"; };
+		B062819B2617A7DF00A4007E /* SettingSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSection.swift; sourceTree = "<group>"; };
+		B062819E2617ADA400A4007E /* PlaceholderHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderHeader.swift; sourceTree = "<group>"; };
 		D3B8D86225FD5B3500B1B3CE /* TomatoTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TomatoTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3B8D86525FD5B3500B1B3CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3B8D86725FD5B3500B1B3CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D3B8D86925FD5B3500B1B3CE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D3B8D86925FD5B3500B1B3CE /* ClockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockViewController.swift; sourceTree = "<group>"; };
 		D3B8D86C25FD5B3500B1B3CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D3B8D86F25FD5B3500B1B3CE /* TomatoTimer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TomatoTimer.xcdatamodel; sourceTree = "<group>"; };
 		D3B8D87125FD5B3700B1B3CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3B8D87425FD5B3700B1B3CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3B8D87625FD5B3700B1B3CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3B8D9B72614F57800B1B3CE /* session.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = session.m4r; sourceTree = "<group>"; };
+		D3B8D9B82614F57800B1B3CE /* longbreak.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = longbreak.m4r; sourceTree = "<group>"; };
+		D3B8D9B92614F57800B1B3CE /* shortbreak.m4r */ = {isa = PBXFileReference; lastKnownFileType = file; path = shortbreak.m4r; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +67,67 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D383779126272EC800B3DA05 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B062819326179D2E00A4007E /* SettingsCell.swift */,
+				B062819426179D2E00A4007E /* UserInfoHeader.swift */,
+				B062819E2617ADA400A4007E /* PlaceholderHeader.swift */,
+				B062819B2617A7DF00A4007E /* SettingSection.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D383779226272EE200B3DA05 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D3B8D86B25FD5B3500B1B3CE /* Main.storyboard */,
+				D3B8D87325FD5B3700B1B3CE /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D383779326272F1900B3DA05 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				D3B8D9B92614F57800B1B3CE /* shortbreak.m4r */,
+				D3B8D9B72614F57800B1B3CE /* session.m4r */,
+				D3B8D9B82614F57800B1B3CE /* longbreak.m4r */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
+		D383779526272F2900B3DA05 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				B05D1C9426198C6900681E45 /* S3.jpeg */,
+				B05D1C9326198C6800681E45 /* S2.jpeg */,
+				B05D1C9526198C6900681E45 /* S1.jpeg */,
+				B062819826179E7A00A4007E /* icon.JPG */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		D383779626272F4000B3DA05 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B06281822617817B00A4007E /* InfoViewController.swift */,
+				B062818626179AD500A4007E /* SettingViewController.swift */,
+				D3B8D86925FD5B3500B1B3CE /* ClockViewController.swift */,
+				B05D1C80261981F600681E45 /* StartViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D383779826272F6F00B3DA05 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				D3B8D86725FD5B3500B1B3CE /* SceneDelegate.swift */,
+				D3B8D86525FD5B3500B1B3CE /* AppDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
 		D3B8D85925FD5B3500B1B3CE = {
 			isa = PBXGroup;
 			children = (
@@ -58,16 +147,25 @@
 		D3B8D86425FD5B3500B1B3CE /* TomatoTimer */ = {
 			isa = PBXGroup;
 			children = (
-				D3B8D86525FD5B3500B1B3CE /* AppDelegate.swift */,
-				D3B8D86725FD5B3500B1B3CE /* SceneDelegate.swift */,
-				D3B8D86925FD5B3500B1B3CE /* ViewController.swift */,
-				D3B8D86B25FD5B3500B1B3CE /* Main.storyboard */,
+				D383779826272F6F00B3DA05 /* Delegate */,
+				D383779626272F4000B3DA05 /* Controller */,
+				D383779226272EE200B3DA05 /* View */,
+				D383779126272EC800B3DA05 /* Model */,
+				D3B8D9B62614F55B00B1B3CE /* Resources */,
 				D3B8D87125FD5B3700B1B3CE /* Assets.xcassets */,
-				D3B8D87325FD5B3700B1B3CE /* LaunchScreen.storyboard */,
 				D3B8D87625FD5B3700B1B3CE /* Info.plist */,
 				D3B8D86E25FD5B3500B1B3CE /* TomatoTimer.xcdatamodeld */,
 			);
 			path = TomatoTimer;
+			sourceTree = "<group>";
+		};
+		D3B8D9B62614F55B00B1B3CE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D383779526272F2900B3DA05 /* Image */,
+				D383779326272F1900B3DA05 /* Sound */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,9 +225,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B05D1C9626198C6900681E45 /* S2.jpeg in Resources */,
+				B05D1C9826198C6900681E45 /* S1.jpeg in Resources */,
+				B05D1C9726198C6900681E45 /* S3.jpeg in Resources */,
+				D3B8D9BA2614F57800B1B3CE /* session.m4r in Resources */,
+				D3B8D9BC2614F57800B1B3CE /* shortbreak.m4r in Resources */,
 				D3B8D87525FD5B3700B1B3CE /* LaunchScreen.storyboard in Resources */,
 				D3B8D87225FD5B3700B1B3CE /* Assets.xcassets in Resources */,
+				B062819926179E7A00A4007E /* icon.JPG in Resources */,
 				D3B8D86D25FD5B3500B1B3CE /* Main.storyboard in Resources */,
+				D3B8D9BB2614F57800B1B3CE /* longbreak.m4r in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,10 +245,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3B8D86A25FD5B3500B1B3CE /* ViewController.swift in Sources */,
+				B062819526179D2E00A4007E /* SettingsCell.swift in Sources */,
+				D3B8D86A25FD5B3500B1B3CE /* ClockViewController.swift in Sources */,
 				D3B8D87025FD5B3500B1B3CE /* TomatoTimer.xcdatamodeld in Sources */,
+				B062819626179D2E00A4007E /* UserInfoHeader.swift in Sources */,
 				D3B8D86625FD5B3500B1B3CE /* AppDelegate.swift in Sources */,
+				B05D1C81261981F600681E45 /* StartViewController.swift in Sources */,
+				B062819C2617A7DF00A4007E /* SettingSection.swift in Sources */,
 				D3B8D86825FD5B3500B1B3CE /* SceneDelegate.swift in Sources */,
+				B06281832617817B00A4007E /* InfoViewController.swift in Sources */,
+				B062819F2617ADA400A4007E /* PlaceholderHeader.swift in Sources */,
+				B062818726179AD500A4007E /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
