@@ -67,41 +67,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B05D1C9B261A35D600681E45 /* InfoPage */ = {
-			isa = PBXGroup;
-			children = (
-				B06281822617817B00A4007E /* InfoViewController.swift */,
-			);
-			path = InfoPage;
-			sourceTree = "<group>";
-		};
-		B074F41F261952BC00817898 /* SettingPage */ = {
-			isa = PBXGroup;
-			children = (
-				B074F421261952F200817898 /* Classes&Structures */,
-				B074F420261952D700817898 /* ViewController */,
-			);
-			path = SettingPage;
-			sourceTree = "<group>";
-		};
-		B074F420261952D700817898 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				B062818626179AD500A4007E /* SettingViewController.swift */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		B074F421261952F200817898 /* Classes&Structures */ = {
+		D383779126272EC800B3DA05 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				B062819326179D2E00A4007E /* SettingsCell.swift */,
 				B062819426179D2E00A4007E /* UserInfoHeader.swift */,
 				B062819E2617ADA400A4007E /* PlaceholderHeader.swift */,
-				B062819826179E7A00A4007E /* icon.JPG */,
 				B062819B2617A7DF00A4007E /* SettingSection.swift */,
 			);
-			path = "Classes&Structures";
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D383779226272EE200B3DA05 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D3B8D86B25FD5B3500B1B3CE /* Main.storyboard */,
+				D3B8D87325FD5B3700B1B3CE /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D383779326272F1900B3DA05 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				D3B8D9B92614F57800B1B3CE /* shortbreak.m4r */,
+				D3B8D9B72614F57800B1B3CE /* session.m4r */,
+				D3B8D9B82614F57800B1B3CE /* longbreak.m4r */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
+		D383779526272F2900B3DA05 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				B05D1C9426198C6900681E45 /* S3.jpeg */,
+				B05D1C9326198C6800681E45 /* S2.jpeg */,
+				B05D1C9526198C6900681E45 /* S1.jpeg */,
+				B062819826179E7A00A4007E /* icon.JPG */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		D383779626272F4000B3DA05 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B06281822617817B00A4007E /* InfoViewController.swift */,
+				B062818626179AD500A4007E /* SettingViewController.swift */,
+				D3B8D86925FD5B3500B1B3CE /* ClockViewController.swift */,
+				B05D1C80261981F600681E45 /* StartViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D383779826272F6F00B3DA05 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				D3B8D86725FD5B3500B1B3CE /* SceneDelegate.swift */,
+				D3B8D86525FD5B3500B1B3CE /* AppDelegate.swift */,
+			);
+			path = Delegate;
 			sourceTree = "<group>";
 		};
 		D3B8D85925FD5B3500B1B3CE = {
@@ -123,33 +147,25 @@
 		D3B8D86425FD5B3500B1B3CE /* TomatoTimer */ = {
 			isa = PBXGroup;
 			children = (
-				B05D1C9B261A35D600681E45 /* InfoPage */,
-				B074F41F261952BC00817898 /* SettingPage */,
-				D3B8D9B62614F55B00B1B3CE /* Sounds */,
-				D3B8D86525FD5B3500B1B3CE /* AppDelegate.swift */,
-				B05D1C80261981F600681E45 /* StartViewController.swift */,
-				D3B8D86725FD5B3500B1B3CE /* SceneDelegate.swift */,
-				D3B8D86925FD5B3500B1B3CE /* ClockViewController.swift */,
-				D3B8D86B25FD5B3500B1B3CE /* Main.storyboard */,
+				D383779826272F6F00B3DA05 /* Delegate */,
+				D383779626272F4000B3DA05 /* Controller */,
+				D383779226272EE200B3DA05 /* View */,
+				D383779126272EC800B3DA05 /* Model */,
+				D3B8D9B62614F55B00B1B3CE /* Resources */,
 				D3B8D87125FD5B3700B1B3CE /* Assets.xcassets */,
-				D3B8D87325FD5B3700B1B3CE /* LaunchScreen.storyboard */,
 				D3B8D87625FD5B3700B1B3CE /* Info.plist */,
 				D3B8D86E25FD5B3500B1B3CE /* TomatoTimer.xcdatamodeld */,
 			);
 			path = TomatoTimer;
 			sourceTree = "<group>";
 		};
-		D3B8D9B62614F55B00B1B3CE /* Sounds */ = {
+		D3B8D9B62614F55B00B1B3CE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B05D1C9526198C6900681E45 /* S1.jpeg */,
-				B05D1C9326198C6800681E45 /* S2.jpeg */,
-				B05D1C9426198C6900681E45 /* S3.jpeg */,
-				D3B8D9B92614F57800B1B3CE /* shortbreak.m4r */,
-				D3B8D9B82614F57800B1B3CE /* longbreak.m4r */,
-				D3B8D9B72614F57800B1B3CE /* session.m4r */,
+				D383779526272F2900B3DA05 /* Image */,
+				D383779326272F1900B3DA05 /* Sound */,
 			);
-			path = Sounds;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

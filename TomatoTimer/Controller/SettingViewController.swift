@@ -15,8 +15,9 @@ class SettingViewController: UIViewController {
     
     //@IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var TableSetting: UITableView!
-    var tableView: UITableView!
-    var userInfoHeader: UserInfoHeader!
+    private var tableView: UITableView!
+    private var userInfoHeader: UserInfoHeader!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,7 +52,13 @@ class SettingViewController: UIViewController {
         tableView.tableHeaderView = placeholderInfoHeader
         tableView.tableFooterView = userInfoHeader
     }
+    
+    
     @objc func rightHandAction() {
+        
+        
+        
+        self.performSegue(withIdentifier: "unwindToClockView", sender: self)
         self.dismiss(animated: true, completion: nil)
             print("done")
     }
@@ -65,7 +72,7 @@ class SettingViewController: UIViewController {
         navigationItem.title = "Settings"
         let navBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 44))
         view.addSubview(navBar)
-        let navItem = UINavigationItem(title: "SomeTitle")
+        let navItem = UINavigationItem(title: "Settings")
         navItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .reply, target: self, action: #selector(rightHandAction))
         navBar.setItems([navItem], animated: false)
     }
@@ -139,22 +146,24 @@ extension UIViewController: UITableViewDelegate, UITableViewDataSource {
         
         switch section {
         case .period:
-            print(timeOption(rawValue: indexPath.row)?.description)
+            print(timeOption(rawValue: indexPath.row)?.description as Any)
             switch timeOption(rawValue: indexPath.row)?.description {
             case "Minutes per Tomato Session":
-                print("1111")
                 let curr=UserDefaults.standard.integer(forKey: "TS_Time")
                 //1. Create the alert controller.
-                let alert = UIAlertController(title: "Set up Tomato Session", message: "Enter a minute number for Tomato Session", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Tomato Session", message: "How long do you want your tomato session to be? (Enter 25 for 25 minutes)", preferredStyle: .alert)
                 //2. Add the text field. You can configure it however you need.
                 alert.addTextField { (textField) in
                     textField.text = String(curr)
+                    textField.textAlignment = .center
                 }
                 // 3. Grab the value from the text field, and print it when the user clicks OK.
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
                     let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
                     UserDefaults.standard.set(textField!.text,forKey: "TS_Time")
-                    print("Text field: \(textField!.text)")
+                    tableView.deselectRow(at: indexPath, animated: true)
+                    print("Text field: \(String(describing: textField!.text))")
+                    
                 }))
                 // 4. Present the alert.
                 self.present(alert, animated: true, completion: nil)
@@ -162,16 +171,18 @@ extension UIViewController: UITableViewDelegate, UITableViewDataSource {
                 print("Short Break")
                 let curr=UserDefaults.standard.integer(forKey: "SB_Time")
                 //1. Create the alert controller.
-                let alert = UIAlertController(title: "Set up Short Break", message: "Enter a minute number for Short Break", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Short Break Setting", message: "How long do you want your short break to be? (Enter 5 for 5 minutes)", preferredStyle: .alert)
                 //2. Add the text field. You can configure it however you need.
                 alert.addTextField { (textField) in
                     textField.text = String(curr)
+                    textField.textAlignment = .center
                 }
                 // 3. Grab the value from the text field, and print it when the user clicks OK.
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
                     let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
                     UserDefaults.standard.set(textField!.text,forKey: "SB_Time")
-                    print("Text field: \(textField!.text)")
+                    tableView.deselectRow(at: indexPath, animated: true)
+                    print("Text field: \(String(describing: textField!.text))")
                 }))
                 // 4. Present the alert.
                 self.present(alert, animated: true, completion: nil)
@@ -179,16 +190,18 @@ extension UIViewController: UITableViewDelegate, UITableViewDataSource {
                 print("1311")
                 let curr=UserDefaults.standard.integer(forKey: "LB_Time")
                 //1. Create the alert controller.
-                let alert = UIAlertController(title: "Set up Long Break", message: "Enter a minute number for Long Break", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Long Break Setting", message: "How long do you want your long break to be? (Enter 20 for 20 minutes)", preferredStyle: .alert)
                 //2. Add the text field. You can configure it however you need.
                 alert.addTextField { (textField) in
                     textField.text = String(curr)
+                    textField.textAlignment = .center
                 }
                 // 3. Grab the value from the text field, and print it when the user clicks OK.
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
                     let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
                     UserDefaults.standard.set(textField!.text,forKey: "LB_Time")
-                    print("Text field: \(textField!.text)")
+                    tableView.deselectRow(at: indexPath, animated: true)
+                    print("Text field: \(String(describing: textField!.text))")
                 }))
                 // 4. Present the alert.
                 self.present(alert, animated: true, completion: nil)

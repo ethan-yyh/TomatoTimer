@@ -1,9 +1,8 @@
 //
 //  UserInfoHeader.swift
-//  SettingsTemplate
+//  TomatoTimer
 //
-//  Created by Stephen Dowless on 2/10/19.
-//  Copyright © 2019 Stephan Dowless. All rights reserved.
+//  Created by Ziyao Wang on 2021-04-02.
 //
 
 import UIKit
