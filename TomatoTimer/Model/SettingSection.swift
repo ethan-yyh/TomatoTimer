@@ -4,11 +4,11 @@
 //
 //  Created by Ziyao Wang on 2021-04-02.
 //
-
+//=====================================================================================================
 protocol SectionType: CustomStringConvertible{
     var containSwitch_sound: Bool {get}
-
 }
+//=====================================================================================================
 enum SettingSection: Int, CaseIterable,CustomStringConvertible{
     case general
     case period
@@ -27,29 +27,24 @@ enum SettingSection: Int, CaseIterable,CustomStringConvertible{
 //            return "Contact Us"
         }
     }
-    
 }
-
+//=====================================================================================================
 enum generalOption: Int, CaseIterable,SectionType{
-    
     case sound
-    
     var containSwitch_sound: Bool {
         switch self{
         case .sound:
             return true
         }
     }
-    
     var description: String {
         switch self{
         case .sound:
             return "Sound"
         }
     }
-    
 }
-
+//=====================================================================================================
 enum timeOption: Int, CaseIterable,SectionType{
     case TPeriod
     case SBreak
@@ -68,9 +63,8 @@ enum timeOption: Int, CaseIterable,SectionType{
             return "Minutes per Long Break"
         }
     }
-    
 }
-
+//=====================================================================================================
 enum confirmOption: Int, CaseIterable,SectionType{
     case confirm
 
@@ -83,5 +77,5 @@ enum confirmOption: Int, CaseIterable,SectionType{
             return "Confirm Changes"
         }
     }
-    
 }
+//=====================================================================================================

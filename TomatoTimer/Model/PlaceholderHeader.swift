@@ -1,45 +1,18 @@
+//
+//  PlaceholderHeader.swift
+//  TomatoTimer
+//
+//  Created by Ziyao Wang on 2021-04-02.
+//
+//This class is used to create a blank area in the setting page for formatting
 import UIKit
 
 class PlaceholderInfoHeader: UIView {
-    
-    // MARK: - Properties
-    
-    let profileImageView: UIImageView = {
-        let iv = UIImageView()
-        iv.contentMode = .scaleAspectFill
-        iv.clipsToBounds = true
-        iv.translatesAutoresizingMaskIntoConstraints = false
-        iv.image = UIImage(named: "icon.JPG")
-        return iv
-    }()
-    
-    let usernameLabel: UILabel = {
-        let label = UILabel()
-        label.text = " "
-        label.font = UIFont.systemFont(ofSize: 16)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    let emailLabel: UILabel = {
-        let label = UILabel()
-        label.text = " "
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.textColor = .lightGray
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
+    //=====================================================================================================
     // MARK: - Init
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
-
-        
-        
-       
     }
-    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

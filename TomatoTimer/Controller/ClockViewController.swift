@@ -1,7 +1,16 @@
+//
+//  ClockViewController.swift
+//  TomatoTimer
+//
+//  Created by Yiheng Yao on 2021-04-04.
+//
+
 import UIKit
 import AVFoundation
 
 class ClockViewController: UIViewController {
+    //=====================================================================================================
+    // MARK: Properties
     // draw a circle
     private let clock = CAShapeLayer()
     private let statusLayer1 = CAShapeLayer()
@@ -39,6 +48,9 @@ class ClockViewController: UIViewController {
     // AV player
     var notification: AVAudioPlayer?
     
+    //=====================================================================================================
+    //MARK: Helper functions
+    
     //    @IBAction func BacktoStart(_ sender: Any) {
     //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
     //                let vc = storyboard.instantiateViewController(identifier: "StartView")
@@ -46,19 +58,15 @@ class ClockViewController: UIViewController {
     //                self.present(vc, animated: true, completion: nil)
     //                show(vc, sender: self)
     //    }
-    
-    
-    
+    //---------------------------------------------------------------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
         // starting now, repeat every second
         // timer.activate()
         timer.schedule(deadline: .now(),repeating: 1)
         loadClock()
-        
-        
     }
-    
+    //---------------------------------------------------------------------------------------
     func loadClock(){
         // load time from userdefaults
         var TSlen = UserDefaults.standard.integer(forKey: "TS_Time")
@@ -191,7 +199,7 @@ class ClockViewController: UIViewController {
             }
         }
     }
-    
+    //---------------------------------------------------------------------------------------
     func clearStatusBar(){
         statusLayer1.removeFromSuperlayer()
         statusLayer2.removeFromSuperlayer()
@@ -200,9 +208,8 @@ class ClockViewController: UIViewController {
         statusLayer5.removeFromSuperlayer()
         statusLayer6.removeFromSuperlayer()
         statusLayer7.removeFromSuperlayer()
-        
     }
-    
+    //---------------------------------------------------------------------------------------
     func alert(file: String){
         
         let path = Bundle.main.path(forResource: file, ofType:nil)!
@@ -214,9 +221,8 @@ class ClockViewController: UIViewController {
         } catch {
             print("Couldn't load sound file.")
         }
-        
     }
-    
+    //---------------------------------------------------------------------------------------
     func secondsToString(secondsRemain: TimeInterval) -> String {
         if secondsRemain == 0.0{
             return "00:00"
@@ -227,9 +233,8 @@ class ClockViewController: UIViewController {
         let newSecondsRemain = Int(secondsRemain) - minutesRemain * 60 // update seconds remain
         
         return String(format: "%02d:%02d", minutesRemain, newSecondsRemain)
-        
     }
-    
+    //---------------------------------------------------------------------------------------
     func updateStatusBar(currentClockType: Int){
         
         let centerYAxis = view.center.y + view.frame.height * 0.35
@@ -296,7 +301,7 @@ class ClockViewController: UIViewController {
             print("default")
         }
     }
-    
+    //---------------------------------------------------------------------------------------
     func drawStatusCircle(center: CGPoint, radius: CGFloat, for layer: CAShapeLayer, color: CGColor, withAnimation: Bool){
         
         let center = center
@@ -331,7 +336,7 @@ class ClockViewController: UIViewController {
         
         
     }
-    
+    //---------------------------------------------------------------------------------------
     func drawNewSession(color: CGColor, period: String){
         
         secondsRemain = Double(period)!
@@ -360,7 +365,7 @@ class ClockViewController: UIViewController {
         
         
     }
-    
+    //---------------------------------------------------------------------------------------
     @IBAction func screenTapped(_ sender: Any) {
         
         if !timerHasStarted{
@@ -385,7 +390,7 @@ class ClockViewController: UIViewController {
         
         
     }
-    
+    //---------------------------------------------------------------------------------------
     // move this to setting page
     func changesAppliedAlert(){
         print("presenting changes alert")
@@ -407,7 +412,7 @@ class ClockViewController: UIViewController {
         // present alert
         present(alert, animated: true, completion: nil)
     }
-    
+    //---------------------------------------------------------------------------------------
     @IBAction func unwindToClockViewController(_ unwindSegue: UIStoryboardSegue) {
         
         print("unwind called")
@@ -438,13 +443,8 @@ class ClockViewController: UIViewController {
             timerHasStarted = false
             
             loadClock()
-            
-            
-            
-            
         }
     }
-    
-    
+    //=====================================================================================================
 }
 

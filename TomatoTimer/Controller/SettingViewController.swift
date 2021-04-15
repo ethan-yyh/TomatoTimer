@@ -7,31 +7,29 @@
 
 import UIKit
 
-
+//=====================================================================================================
 private let reuseIdentifier = "SettingsCell"
-
+//=====================================================================================================
 class SettingViewController: UIViewController {
+    //=====================================================================================================
     // MARK: - Properties
-    
-    //@IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var TableSetting: UITableView!
     private var tableView: UITableView!
     private var userInfoHeader: UserInfoHeader!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureUI()
     }
-    
-
+    //=====================================================================================================
     // MARK: - Helper Functions
+    //---------------------------------------------------------------------------------------
     public func showSecondViewController() {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let secondVC = storyboard.instantiateViewController(identifier: "SettingViewController")
-
+            
             show(secondVC, sender: self)
         }
+    //---------------------------------------------------------------------------------------
     func configureTableView() {
         tableView = UITableView()
         tableView.delegate = self
@@ -52,16 +50,13 @@ class SettingViewController: UIViewController {
         tableView.tableHeaderView = placeholderInfoHeader
         //tableView.tableFooterView = userInfoHeader
     }
-    
-    
+    //---------------------------------------------------------------------------------------
     @objc func rightHandAction() {
-        
-        
-        
         self.performSegue(withIdentifier: "unwindToClockView", sender: self)
         self.dismiss(animated: true, completion: nil)
-            print("done")
+        //print("done")
     }
+    //---------------------------------------------------------------------------------------
     func configureUI() {
         configureTableView()
         
@@ -76,16 +71,16 @@ class SettingViewController: UIViewController {
         navItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .reply, target: self, action: #selector(rightHandAction))
         navBar.setItems([navItem], animated: false)
     }
-
 }
-
+//=====================================================================================================
+// MARK: Tableview Controler Helper Functions
 extension UIViewController: UITableViewDelegate, UITableViewDataSource {
-    
+    //---------------------------------------------------------------------------------------
     public func numberOfSections(in tableView: UITableView) -> Int {
         return SettingSection.allCases.count
     }
+    //---------------------------------------------------------------------------------------
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         guard let section = SettingSection(rawValue: section) else{return 0}
         switch section{
         case .general: return generalOption.allCases.count
@@ -93,6 +88,7 @@ extension UIViewController: UITableViewDelegate, UITableViewDataSource {
         //default: return 0
         }
     }
+    //---------------------------------------------------------------------------------------
     public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView()
         view.backgroundColor = .black
@@ -107,15 +103,15 @@ extension UIViewController: UITableViewDelegate, UITableViewDataSource {
         
         return view
     }
-    
+    //---------------------------------------------------------------------------------------
     public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 30
     }
-    
+    //---------------------------------------------------------------------------------------
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 40;//Choose your custom row height
     }
-    
+    //---------------------------------------------------------------------------------------
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! SettingsCell
         
@@ -128,13 +124,10 @@ extension UIViewController: UITableViewDelegate, UITableViewDataSource {
         case .period:
             guard let period = timeOption(rawValue: indexPath.row)else{return UITableViewCell()}
             cell.sectionType = period
-
-       // default: return cell
         }
         return cell
     }
-    
-    
+    //---------------------------------------------------------------------------------------
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let section = SettingSection(rawValue: indexPath.section) else { return }
         
@@ -206,7 +199,6 @@ extension UIViewController: UITableViewDelegate, UITableViewDataSource {
             print("No Action")
         }
     }
-    
 }
 
 

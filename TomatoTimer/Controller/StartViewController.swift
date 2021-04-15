@@ -2,21 +2,21 @@
 //  StartViewController.swift
 //  TomatoTimer
 //
-//  Created by Ziyao Wang on 2021-04-04.
+//  Created by Yiheng Yao on 2021-04-04.
 //
 
 import UIKit
 
 class StartViewController: UIViewController {
-
+    //=====================================================================================================
     // welcome texts
     let welcomeTexts: [String] = ["Live", "Learn", "Play"]
     var currentTextIndex: Int = 0
     
     var timer = Timer()
     let welcomeTextLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 1000, height: 1000))
-    
-    
+
+    //=====================================================================================================
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,7 +37,7 @@ class StartViewController: UIViewController {
         
     }
         
-
+    //=====================================================================================================
     @objc func nextWelcomeText() {
         if currentTextIndex <= 2 {
             
@@ -48,9 +48,6 @@ class StartViewController: UIViewController {
             
             // increment current text index
             currentTextIndex += 1
-            
-            
-            
         } else if currentTextIndex > 2 {
             
             // stop the timer
