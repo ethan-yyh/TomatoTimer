@@ -50,7 +50,7 @@ class SettingViewController: UIViewController {
         
         userInfoHeader = UserInfoHeader(frame: frame)
         tableView.tableHeaderView = placeholderInfoHeader
-        tableView.tableFooterView = userInfoHeader
+        //tableView.tableFooterView = userInfoHeader
     }
     
     
@@ -90,7 +90,7 @@ extension UIViewController: UITableViewDelegate, UITableViewDataSource {
         switch section{
         case .general: return generalOption.allCases.count
         case .period: return timeOption.allCases.count
-        default: return 0
+        //default: return 0
         }
     }
     public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -118,12 +118,6 @@ extension UIViewController: UITableViewDelegate, UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! SettingsCell
-//        switch indexPath.section{
-//        case 0: cell.backgroundColor = .red
-//        case 1: cell.backgroundColor = .blue
-//        case 2: cell.backgroundColor = .green
-//        default: break
-//        }
         
         cell.contentView.isUserInteractionEnabled = false
         guard let section = SettingSection(rawValue: indexPath.section) else{return UITableViewCell()}
@@ -135,7 +129,7 @@ extension UIViewController: UITableViewDelegate, UITableViewDataSource {
             guard let period = timeOption(rawValue: indexPath.row)else{return UITableViewCell()}
             cell.sectionType = period
 
-        default: return cell
+       // default: return cell
         }
         return cell
     }

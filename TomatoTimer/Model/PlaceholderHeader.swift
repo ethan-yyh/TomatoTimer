@@ -1,11 +1,3 @@
-//
-//  UserInfoHeader.swift
-//  SettingsTemplate
-//
-//  Created by Stephen Dowless on 2/10/19.
-//  Copyright © 2019 Stephan Dowless. All rights reserved.
-//
-
 import UIKit
 
 class PlaceholderInfoHeader: UIView {

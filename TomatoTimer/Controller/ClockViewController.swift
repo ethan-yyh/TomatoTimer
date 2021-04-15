@@ -39,16 +39,16 @@ class ClockViewController: UIViewController {
     // AV player
     var notification: AVAudioPlayer?
     
-//    @IBAction func BacktoStart(_ sender: Any) {
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//                let vc = storyboard.instantiateViewController(identifier: "StartView")
-//                vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
-//                self.present(vc, animated: true, completion: nil)
-//                show(vc, sender: self)
-//    }
+    //    @IBAction func BacktoStart(_ sender: Any) {
+    //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    //                let vc = storyboard.instantiateViewController(identifier: "StartView")
+    //                vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+    //                self.present(vc, animated: true, completion: nil)
+    //                show(vc, sender: self)
+    //    }
     
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // starting now, repeat every second
@@ -56,7 +56,7 @@ class ClockViewController: UIViewController {
         timer.schedule(deadline: .now(),repeating: 1)
         loadClock()
         
-
+        
     }
     
     func loadClock(){
@@ -74,10 +74,10 @@ class ClockViewController: UIViewController {
         self.shortBreakLength = String(SBlen) // seconds
         self.longBreakLength = String(LBlen) // seconds
         
-//        // uncomment for testing
-//        self.sessionLength = "5"
-//        self.shortBreakLength = "5" // seconds
-//        self.longBreakLength = "5" // seconds
+        //        // uncomment for testing
+        //        self.sessionLength = "5"
+        //        self.shortBreakLength = "5" // seconds
+        //        self.longBreakLength = "5" // seconds
         
         // initiate text labels
         timeLabel.center = CGPoint(x:view.center.x, y: view.center.y-50)
@@ -142,11 +142,11 @@ class ClockViewController: UIViewController {
                         let sound_switch = UserDefaults.standard.integer(forKey: "Sound_isOn")
                         if (sound_switch == 1){
                             self?.alert(file: self!.sessionSound)
-
+                            
                         }
                         
-//                        // uncomment for sound testing
-//                        self?.alert(file: self!.sessionSound)
+                        //                        // uncomment for sound testing
+                        //                        self?.alert(file: self!.sessionSound)
                         self?.tapLabel.text = "Tap to start"
                         self?.tapLabel.textColor = .systemGreen
                         self?.drawNewSession(color: UIColor.systemGreen.cgColor, period: self!.shortBreakLength)
@@ -156,11 +156,11 @@ class ClockViewController: UIViewController {
                         let sound_switch = UserDefaults.standard.integer(forKey: "Sound_isOn")
                         if (sound_switch == 1){
                             self?.alert(file: self!.shortBreakSound)
-
+                            
                         }
                         
-//                        // uncomment for sound testing
-//                        self?.alert(file: self!.shortBreakSound)
+                        //                        // uncomment for sound testing
+                        //                        self?.alert(file: self!.shortBreakSound)
                         self?.tapLabel.text = "Tap to start"
                         self?.tapLabel.textColor = .systemOrange
                         self?.drawNewSession(color: UIColor.systemOrange.cgColor, period: self!.sessionLength)
@@ -170,11 +170,11 @@ class ClockViewController: UIViewController {
                         let sound_switch = UserDefaults.standard.integer(forKey: "Sound_isOn")
                         if (sound_switch == 1){
                             self?.alert(file: self!.longBreakSound)
-
+                            
                         }
                         
-//                        // uncomment for sound testing
-//                        self?.alert(file: self!.longBreakSound)
+                        //                        // uncomment for sound testing
+                        //                        self?.alert(file: self!.longBreakSound)
                         self?.tapLabel.text = "Tap to start"
                         self?.tapLabel.textColor = .systemBlue
                         self?.drawNewSession(color: UIColor.systemBlue.cgColor, period: self!.longBreakLength)
@@ -207,7 +207,7 @@ class ClockViewController: UIViewController {
         
         let path = Bundle.main.path(forResource: file, ofType:nil)!
         let url = URL(fileURLWithPath: path)
-
+        
         do {
             notification = try AVAudioPlayer(contentsOf: url)
             notification?.play()
@@ -216,7 +216,7 @@ class ClockViewController: UIViewController {
         }
         
     }
-
+    
     func secondsToString(secondsRemain: TimeInterval) -> String {
         if secondsRemain == 0.0{
             return "00:00"
@@ -243,7 +243,7 @@ class ClockViewController: UIViewController {
         let center5 = CGPoint(x: (view.center.x + view.frame.width * offset), y: centerYAxis)
         let center6 = CGPoint(x: (view.center.x + view.frame.width * offset * 2), y: centerYAxis)
         let center7 = CGPoint(x: (view.center.x + view.frame.width * offset * 3), y: centerYAxis)
-
+        
         
         // define radius
         let shortBreakCircleRadius = CGFloat(view.frame.width * 0.02)
@@ -375,7 +375,7 @@ class ClockViewController: UIViewController {
             basicAnimation.isRemovedOnCompletion = false
             
             clock.add(basicAnimation, forKey: "key")
-
+            
             timer.resume()
             tapLabel.text = ""
             timerHasStarted = true

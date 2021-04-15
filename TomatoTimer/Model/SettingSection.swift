@@ -12,7 +12,7 @@ protocol SectionType: CustomStringConvertible{
 enum SettingSection: Int, CaseIterable,CustomStringConvertible{
     case general
     case period
-    case contact
+    //case contact
     
     var containSwitch_sound: Bool {return false}
 
@@ -23,8 +23,8 @@ enum SettingSection: Int, CaseIterable,CustomStringConvertible{
             return "General Setting"
         case .period:
             return "Time Period Setting"
-        case .contact:
-            return "Contact Us"
+//        case .contact:
+//            return "Contact Us"
         }
     }
     
