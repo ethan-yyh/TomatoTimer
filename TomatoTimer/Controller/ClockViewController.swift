@@ -62,10 +62,13 @@ class ClockViewController: UIViewController {
     func loadClock(){
         // load time from userdefaults
         var TSlen = UserDefaults.standard.integer(forKey: "TS_Time")
+        if TSlen == 0 {TSlen = 1}
         TSlen = Int(TSlen)*60
         var SBlen = UserDefaults.standard.integer(forKey: "SB_Time")
+        if SBlen == 0 {SBlen = 1}
         SBlen = Int(SBlen)*60
         var LBlen = UserDefaults.standard.integer(forKey: "LB_Time")
+        if LBlen == 0 {LBlen = 1}
         LBlen = Int(LBlen)*60
         self.sessionLength=String(TSlen)
         self.shortBreakLength = String(SBlen) // seconds
