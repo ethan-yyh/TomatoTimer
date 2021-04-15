@@ -14,7 +14,6 @@ class SettingsCell: UITableViewCell {
         didSet{
             guard let sectionType = sectionType else{return}
             textLabel?.text = sectionType.description
-            switchControl_reset.isHidden = !sectionType.containSwitch_reset
             switchControl_sound.isHidden = !sectionType.containSwitch_sound
         }
     }
@@ -25,7 +24,7 @@ class SettingsCell: UITableViewCell {
             switchControl_reset.setOn(true, animated: true)}else{
                 switchControl_reset.setOn(false, animated: true)
             }
-        switchControl_reset.onTintColor = .blue
+        switchControl_reset.onTintColor = .systemGreen
         switchControl_reset.translatesAutoresizingMaskIntoConstraints = false
         switchControl_reset.addTarget(self, action: #selector(handleResetSwitchAction), for: .valueChanged)
         return switchControl_reset
@@ -36,7 +35,7 @@ class SettingsCell: UITableViewCell {
         if (sound_switch == 0){
             switchControl_sound.setOn(false, animated: true)
         }else{switchControl_sound.setOn(true, animated: true)}
-        switchControl_sound.onTintColor = .red
+        switchControl_sound.onTintColor = .systemGreen
         switchControl_sound.translatesAutoresizingMaskIntoConstraints = false
         switchControl_sound.addTarget(self, action: #selector(handleSoundSwitchAction), for: .valueChanged)
         return switchControl_sound
@@ -72,10 +71,6 @@ class SettingsCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-            //switchControl.contentView.isUserInteractionEnabled
-        addSubview(switchControl_reset)
-        switchControl_reset.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        switchControl_reset.rightAnchor.constraint(equalTo: rightAnchor,constant: -12).isActive = true
         addSubview(switchControl_sound)
         switchControl_sound.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         switchControl_sound.rightAnchor.constraint(equalTo: rightAnchor,constant: -12).isActive = true

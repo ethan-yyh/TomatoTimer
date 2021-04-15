@@ -6,7 +6,6 @@
 //
 
 protocol SectionType: CustomStringConvertible{
-    var containSwitch_reset: Bool {get}
     var containSwitch_sound: Bool {get}
 
 }
@@ -15,7 +14,6 @@ enum SettingSection: Int, CaseIterable,CustomStringConvertible{
     case period
     case contact
     
-    var containSwitch_reset: Bool {return false}
     var containSwitch_sound: Bool {return false}
 
     var description: String {
@@ -33,20 +31,11 @@ enum SettingSection: Int, CaseIterable,CustomStringConvertible{
 }
 
 enum generalOption: Int, CaseIterable,SectionType{
-    case reset
+    
     case sound
-    var containSwitch_reset: Bool {
-        switch self{
-        case .reset:
-            return true
-        case .sound:
-            return false
-        }
-    }
+    
     var containSwitch_sound: Bool {
         switch self{
-        case .reset:
-            return false
         case .sound:
             return true
         }
@@ -54,8 +43,6 @@ enum generalOption: Int, CaseIterable,SectionType{
     
     var description: String {
         switch self{
-        case .reset:
-            return "Reset at Midnight"
         case .sound:
             return "Sound"
         }

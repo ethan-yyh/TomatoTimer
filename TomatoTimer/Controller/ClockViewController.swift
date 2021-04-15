@@ -33,6 +33,7 @@ class ClockViewController: UIViewController {
     
     // create text lables
     let timeLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 1000, height: 1000))
+    let tapLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 1000, height: 1000))
     let notificationLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 1000, height: 1000))
     
     // AV player
@@ -50,7 +51,16 @@ class ClockViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // starting now, repeat every second
+        // timer.activate()
+        timer.schedule(deadline: .now(),repeating: 1)
+        loadClock()
         
+
+    }
+    
+    func loadClock(){
+        // load time from userdefaults
         var TSlen = UserDefaults.standard.integer(forKey: "TS_Time")
         TSlen = Int(TSlen)*60
         var SBlen = UserDefaults.standard.integer(forKey: "SB_Time")
@@ -72,6 +82,12 @@ class ClockViewController: UIViewController {
         timeLabel.textColor = .white
         timeLabel.textAlignment = .center
         
+        tapLabel.center = CGPoint(x:view.center.x, y: view.center.y + 43)
+        tapLabel.font = UIFont(name: "Helvetica Neue Thin", size: self.view.frame.width * 0.06)
+        tapLabel.textColor = .systemOrange
+        tapLabel.textAlignment = .center
+        tapLabel.text = "Tap to start"
+        
         notificationLabel.center = CGPoint(x:view.center.x, y: view.center.y + view.frame.height * 0.25)
         notificationLabel.font = UIFont(name: "Helvetica Neue Thin", size: self.view.frame.width * 0.10)
         notificationLabel.textAlignment = .center
@@ -80,10 +96,9 @@ class ClockViewController: UIViewController {
         
         view.addSubview(timeLabel)
         view.addSubview(notificationLabel)
+        view.addSubview(tapLabel)
         
-        // starting now, repeat every second
-        // timer.activate()
-        timer.schedule(deadline: .now(),repeating: 1)
+        
         
         /*
          1, 3, 5, 7 - tomato session
@@ -129,7 +144,8 @@ class ClockViewController: UIViewController {
                         
 //                        // uncomment for sound testing
 //                        self?.alert(file: self!.sessionSound)
-                        
+                        self?.tapLabel.text = "Tap to start"
+                        self?.tapLabel.textColor = .systemGreen
                         self?.drawNewSession(color: UIColor.systemGreen.cgColor, period: self!.shortBreakLength)
                     } else if self?.clockType == 1 || self?.clockType == 3 || self?.clockType == 5 || self?.clockType == 7{
                         self?.notificationLabel.text = self!.sessionNotification
@@ -142,7 +158,8 @@ class ClockViewController: UIViewController {
                         
 //                        // uncomment for sound testing
 //                        self?.alert(file: self!.shortBreakSound)
-                        
+                        self?.tapLabel.text = "Tap to start"
+                        self?.tapLabel.textColor = .systemOrange
                         self?.drawNewSession(color: UIColor.systemOrange.cgColor, period: self!.sessionLength)
                     } else if self?.clockType == 8 {
                         self?.notificationLabel.text = self!.longBreakNotification
@@ -155,7 +172,8 @@ class ClockViewController: UIViewController {
                         
 //                        // uncomment for sound testing
 //                        self?.alert(file: self!.longBreakSound)
-                        
+                        self?.tapLabel.text = "Tap to start"
+                        self?.tapLabel.textColor = .systemBlue
                         self?.drawNewSession(color: UIColor.systemBlue.cgColor, period: self!.longBreakLength)
                     }
                     self?.updateStatusBar(currentClockType: self!.clockType)
@@ -356,6 +374,7 @@ class ClockViewController: UIViewController {
             clock.add(basicAnimation, forKey: "key")
 
             timer.resume()
+            tapLabel.text = ""
             timerHasStarted = true
         }
         
@@ -363,6 +382,66 @@ class ClockViewController: UIViewController {
         
         
     }
-    @IBAction func unwindToClcokViewController(_ unwindSegue: UIStoryboardSegue) {}
+    
+    // move this to setting page
+    func changesAppliedAlert(){
+        print("presenting changes alert")
+        let message = "Your recent changes have been applied and your timer will be reset to reflect those changes."
+        
+        // creating alert box
+        let alert = UIAlertController(
+            title:"New Changes Applied",
+            message: message,
+            preferredStyle: .alert)
+        
+        // adding action button to the alert box
+        let action = UIAlertAction(
+            title:"OK",
+            style: .default,
+            handler: nil)
+        alert.addAction(action)
+        
+        // present alert
+        present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func unwindToClockViewController(_ unwindSegue: UIStoryboardSegue) {
+        
+        print("unwind called")
+        // load time from userdefaults
+        var TSlen = UserDefaults.standard.integer(forKey: "TS_Time")
+        TSlen = Int(TSlen)*60
+        var SBlen = UserDefaults.standard.integer(forKey: "SB_Time")
+        SBlen = Int(SBlen)*60
+        var LBlen = UserDefaults.standard.integer(forKey: "LB_Time")
+        LBlen = Int(LBlen)*60
+        
+        if TSlen != Int(sessionLength) || SBlen != Int(shortBreakLength) || LBlen != Int(longBreakLength){
+            
+            
+            // user setting changed
+            print("user setting change detected")
+            changesAppliedAlert()
+            sessionLength=String(TSlen)
+            shortBreakLength = String(SBlen) // seconds
+            longBreakLength = String(LBlen) // seconds
+            
+            // only suspend the timer if timer is running
+            if timerHasStarted {
+                timer.suspend()
+            }
+            
+            clock.removeAllAnimations()
+            timerHasStarted = false
+            
+            loadClock()
+            
+            
+            
+            
+        }
+    }
+    
+    
 }
 

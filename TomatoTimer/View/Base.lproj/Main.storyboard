@@ -32,9 +32,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fg5-GT-IiN">
+                                <rect key="frame" x="364" y="66" width="26" height="25"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="gearshape" catalog="system" symbolScale="large"/>
+                                </state>
+                                <connections>
+                                    <segue destination="T9L-kM-RBy" kind="show" id="vMa-h5-jLG"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6H-fw-bCV">
-                                <rect key="frame" x="47" y="46" width="25" height="24"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                <rect key="frame" x="35" y="64" width="25" height="29"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="24"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -44,24 +54,15 @@
                                     <segue destination="iI7-ua-8ds" kind="presentation" id="Gek-hQ-sUo"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fg5-GT-IiN">
-                                <rect key="frame" x="325" y="30" width="62" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal">
-                                    <imageReference key="image" image="gearshape" catalog="system" symbolScale="large"/>
-                                </state>
-                                <connections>
-                                    <segue destination="T9L-kM-RBy" kind="show" id="vMa-h5-jLG"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="D6H-fw-bCV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="47" id="KRG-EQ-vkr"/>
-                            <constraint firstItem="D6H-fw-bCV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="2" id="stn-79-qrQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Fg5-GT-IiN" secondAttribute="trailing" constant="24" id="8Sk-Jz-eDC"/>
+                            <constraint firstItem="D6H-fw-bCV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="KAp-cX-Fdg"/>
+                            <constraint firstItem="D6H-fw-bCV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="ST9-gD-2sJ"/>
+                            <constraint firstItem="Fg5-GT-IiN" firstAttribute="centerY" secondItem="D6H-fw-bCV" secondAttribute="centerY" id="qgP-7v-Atp"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="UVC-eM-a1c" appends="YES" id="n3b-FY-aXJ"/>
@@ -76,7 +77,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="34.782608695652179" y="93.75"/>
+            <point key="canvasLocation" x="33.75" y="93.75"/>
         </scene>
         <!--Setting View Controller-->
         <scene sceneID="fhI-Ug-LZ5">
@@ -85,12 +86,26 @@
                     <view key="view" contentMode="scaleToFill" id="ErG-ge-P9A">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VrM-nq-HTA">
+                                <rect key="frame" x="0.0" y="0.0" width="508" height="44"/>
+                            </navigationBar>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="FKb-VR-Erm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VrM-nq-HTA" firstAttribute="top" secondItem="FKb-VR-Erm" secondAttribute="top" id="PPP-9U-sjr"/>
+                            <constraint firstItem="VrM-nq-HTA" firstAttribute="trailing" secondItem="FKb-VR-Erm" secondAttribute="trailing" id="gsW-mq-521"/>
+                            <constraint firstItem="VrM-nq-HTA" firstAttribute="leading" secondItem="FKb-VR-Erm" secondAttribute="leading" id="r1J-Fq-dll"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5QG-7k-67h"/>
+                    <connections>
+                        <segue destination="2c2-AJ-Trd" kind="unwind" identifier="unwindToClockView" unwindAction="unwindToClockViewController:" id="EJY-S5-q6B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PS2-Id-DaG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="2c2-AJ-Trd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1033.3333333333335" y="-74.330357142857139"/>
         </scene>
@@ -105,10 +120,10 @@
                             <navigationBar contentMode="scaleToFill" backIndicatorImage="arrow.backward.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="DM2-Vs-K8J">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                                 <items>
-                                    <navigationItem title="Method Info." id="ObK-vY-37w" userLabel="Method Info.">
-                                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="3pV-kE-W4O">
+                                    <navigationItem title="About Pomodoro" id="ObK-vY-37w" userLabel="Method Info.">
+                                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" image="arrowshape.turn.up.backward" catalog="system" id="3pV-kE-W4O">
                                             <connections>
-                                                <segue destination="rMb-AN-OFI" kind="unwind" unwindAction="unwindToClcokViewController:" id="7Vv-tE-HAG"/>
+                                                <segue destination="rMb-AN-OFI" kind="unwind" unwindAction="unwindToClockViewController:" id="uLm-Zn-kG9"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -147,6 +162,7 @@
     </scenes>
     <resources>
         <image name="arrow.backward.square" catalog="system" width="128" height="114"/>
+        <image name="arrowshape.turn.up.backward" catalog="system" width="128" height="106"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
